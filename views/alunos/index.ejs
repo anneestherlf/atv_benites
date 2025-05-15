@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="UTF-8">
   <title>CRUD de Alunos</title>
 </head>
+
 <body>
   <h1>Cadastro de Alunos</h1>
 
@@ -14,9 +16,11 @@
     <!-- Seleção de curso -->
     <select name="curso_id">
       <option value="">Selecione um curso</option>
-      <% cursos.forEach(curso => { %>
-        <option value="<%= curso.id %>"><%= curso.nome %></option>
-      <% }) %>
+      <% cursos.forEach(curso=> { %>
+        <option value="<%= curso.id %>">
+          <%= curso.nome %>
+        </option>
+        <% }) %>
     </select>
 
     <button type="submit">Adicionar</button>
@@ -32,19 +36,31 @@
   <hr>
 
   <ul>
-    <% alunos.forEach(aluno => { %>
+    <% alunos.forEach(aluno=> { %>
       <li>
         <%= aluno.nome %> - <%= aluno.email %>
-        <form action="/alunos/edit/<%= aluno.id %>" method="POST" style="display:inline">
-          <input name="nome" placeholder="Novo nome" required>
-          <input name="email" placeholder="Novo email" required>
-          <button type="submit">Editar</button>
-        </form>
-        <form action="/alunos/delete/<%= aluno.id %>" method="POST" style="display:inline">
-          <button type="submit">Apagar</button>
-        </form>
+            <form action="/alunos/edit/<%= aluno.id %>" method="POST" style="display:inline">
+              <input name="nome" placeholder="Novo nome" required>
+              <input name="email" placeholder="Novo email" required>
+              <button type="submit">Editar</button>
+            </form>
+            <form action="/alunos/delete/<%= aluno.id %>" method="POST" style="display:inline">
+              <button type="submit">Apagar</button>
+            </form>
       </li>
-    <% }) %>
+      <% }) %>
   </ul>
+  <!-- Loop para listar todos os cursos e permitir edição -->
+  <% cursos.forEach(curso=> { %>
+    <form action="/cursos/edit/<%= curso.id %>" method="POST" style="display:inline;">
+      <input name="nome" value="<%= curso.nome %>" required>
+      <button type="submit">✏️</button>
+    </form>
+    <!-- Formulário para deletar um curso -->
+    <form action="/cursos/delete/<%= curso.id %>" method="POST" style="display:inline;">
+      <button type="submit" onclick="return confirm('Tem certeza que deseja excluir?')">🗑️</button>
+    </form>
+    <% }) %>
 </body>
+
 </html>
