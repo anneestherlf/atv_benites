@@ -35,7 +35,7 @@ npm install
     
 3. **Configurar o arquivo `.env`:**
 
-Configure as variáveis de ambiente necessárias, como as configurações do banco de dados PostgreSQL (.env).
+Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente necessárias, como as configurações do banco de dados PostgreSQL.
     
 
 Configuração do Banco de Dados
