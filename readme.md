@@ -1,3 +1,14 @@
+# Questão solicitada pelo professor Cristiano: Explique com suas palavras o funcionamento do models, controller e fale sobre endpoints no projeto.
+
+Resposta: <br>
+Models são as tabelas de dados do projeto. São os arquivos JavaScript responsáveis por representar e manipular os dados das entidades principais: nesse caso, alunos, cursos e professores.
+
+Controller é responsável por transportar os dados para a parte visual do projeto. Nesse repositório, o controller é responsável por receber as requisições do usuário (quando você clica em "Adicionar", "Editar" ou "Deletar" professor), chamar os métodos do model (como o professor.js) e decidir qual página (view) mostrar como resposta.
+
+Os endpoints são os "endereços" (caminhos/URLs) que o navegador usa para se comunicar com o servidor. Eles dizem para onde os dados do formulário devem ser enviados quando você clica em "Adicionar", "Editar" ou "Deletar".
+
+No projeto, eu utilizei endpoints nos atributos action dos formulários (arquivos index.ejs) para adicionar, editar e deletar professores, alunos e cursos. Esses caminhos são usados pelo navegador para enviar os dados para o servidor.
+
 # Boilerplate MVC em Node.js com PostgreSQL
 
 Este projeto é um boilerplate básico para uma aplicação Node.js seguindo o padrão MVC (Model-View-Controller), utilizando PostgreSQL como banco de dados.
