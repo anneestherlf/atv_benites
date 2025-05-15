@@ -9,9 +9,9 @@ Os endpoints são os "endereços" (caminhos/URLs) que o navegador usa para se co
 
 No projeto, eu utilizei endpoints nos atributos action dos formulários (arquivos index.ejs) para adicionar, editar e deletar professores, alunos e cursos. Esses caminhos são usados pelo navegador para enviar os dados para o servidor.
 
-# Boilerplate MVC em Node.js com PostgreSQL
+---------------
 
-Este projeto é um boilerplate básico para uma aplicação Node.js seguindo o padrão MVC (Model-View-Controller), utilizando PostgreSQL como banco de dados.
+# Sobre o projeto:
 
 ## Requisitos
 
@@ -34,8 +34,8 @@ npm install
 ```
     
 3. **Configurar o arquivo `.env`:**
-    
-Renomeie o arquivo `.env.example` para `.env` e configure as variáveis de ambiente necessárias, como as configurações do banco de dados PostgreSQL.
+
+Configure as variáveis de ambiente necessárias, como as configurações do banco de dados PostgreSQL (.env).
     
 
 Configuração do Banco de Dados
@@ -51,7 +51,7 @@ Configuração do Banco de Dados
 npm run init-db
 ```
     
-Isso criará a tabela `users` no seu banco de dados PostgreSQL com UUID como chave primária e inserirá alguns registros de exemplo.
+Isso criará as tabelas `users`, `aluno`, `curso` e `professor` no seu banco de dados PostgreSQL com UUID como chave primária e inserirá alguns registros de exemplo.
     
 
 Funcionalidades
@@ -81,14 +81,7 @@ Estrutura de Diretórios
 * **`tests/`**: Testes automatizados.
 * **`views/`**: Views da aplicação (se aplicável).
 
-Contribuição
-------------
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um issue ou enviar um pull request.
-
 Licença
 -------
 
 Este projeto está licenciado sob a Licença MIT.
-
-Este README.md fornece uma visão geral clara do boilerplate, incluindo instruções de instalação, configuração do banco de dados, funcionalidades principais, scripts disponíveis, estrutura de diretórios, como contribuir e informações de licença. Certifique-se de personalizar as seções com detalhes específicos do seu projeto conforme necessário.
