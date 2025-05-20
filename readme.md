@@ -1,4 +1,34 @@
-# Questão solicitada pelo professor Cristiano: Explique com suas palavras o funcionamento do models, controller e fale sobre endpoints no projeto.
+## 🧠 Perguntas para medir aprendizado (responder neste README)
+
+1. **Explique com suas palavras o papel de cada camada da arquitetura MVC usada neste projeto.**  
+   *Como o Model, o Controller e a View interagem entre si?*
+
+O Model é a parte que cuida dos dados. Ele conversa com o banco de dados, saçva, busca, edita e apaga informações. A View é a parte visual, ou seja, o que aparece na tela do usuário (e as páginas HTML). O controller é o "meio". Ele recebe os pedidos do usuário e pede para o Mode mexer nos dados, depois mostra a resposta usando a View.
+
+Eles interagem dessa forma: o Controller recebe o pedido, fala com o Model para salvar o professor no banoc, e depois mostra uma página (View) com o resultado.
+
+2. **Como ocorre o envio e o recebimento de dados no formato JSON neste projeto?**  
+   *Cite uma rota que responde em JSON e explique seu funcionamento.*
+
+O envio e o recebimento de dados em JSON acontece quando o servidos responde informações em formato de texto estruturado (JSON), em vez de mostrar uma página HTML. Exemplo de rota:
+
+```javascript 
+app.get('/api/professores', async (req, res) => {
+    const professores = await Professor.findAll();
+    res.json(professores);
+});
+```
+Funcionamento: quando acessamos `/api/professores`, o servidor pega todos os professores do banco de dados e devolve a lista em formato JSON. 
+
+3. **Qual a importância de usar HTML básico com formulários e tabelas para organizar e manipular dados no navegador?**  
+   *Por que esse tipo de estrutura ainda é útil em projetos back-end com Node.js?*
+
+Pois o HTML básico com formulários e tabelas é fácil de entender e usar. Ele permite que qualquer pessoa cadastre, edite e veja dados direto pelo navegador, sem precisar de programas especiais. 
+Ainda é útil porque facilita testes, aprendizado e uso do sistema por pessoas que não são desenvolvedoras. Além disso, funciona em qualquer navegador e é ótimo para sistemas simples de cadastro e consulta de dados.
+
+---
+
+## 📝 Questão solicitada pelo professor Cristiano: Explique com suas palavras o funcionamento do models, controller e fale sobre endpoints no projeto.
 
 Resposta: <br>
 Models são as tabelas de dados do projeto. São os arquivos JavaScript responsáveis por representar e manipular os dados das entidades principais: nesse caso, alunos, cursos e professores.
