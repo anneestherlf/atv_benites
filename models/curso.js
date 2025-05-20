@@ -17,7 +17,7 @@ module.exports = {
     const result = await db.query(query, [nome, id]);
     return result.rows[0];
   },
-  // Função no model que remove um curso do banco de dados pelo ID
+
   async delete(id) {
     await db.query('DELETE FROM curso WHERE id = $1', [id]);
   }
